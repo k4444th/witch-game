@@ -1,3 +1,10 @@
-[gd_scene format=3 uid="uid://bh7rtc6i2ohrx"]
+[gd_scene load_steps=2 format=3 uid="uid://bh7rtc6i2ohrx"]
+
+[ext_resource type="PackedScene" uid="uid://bpw3jyowbxry2" path="res://scenes/witch.tscn" id="1_4xfga"]
 
 [node name="Map" type="Node"]
+
+[node name="Witch" parent="." instance=ExtResource("1_4xfga")]
+
+[node name="Camera2D" type="Camera2D" parent="."]
+zoom = Vector2(0.2, 0.2)
