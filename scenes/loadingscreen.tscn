@@ -1,0 +1,16 @@
+[gd_scene load_steps=2 format=3 uid="uid://drerah870nwsd"]
+
+[ext_resource type="Script" uid="uid://de763p13fhut8" path="res://scripts/loadingscreen.gd" id="1_jy0q2"]
+
+[node name="Loadingscreen" type="Node"]
+script = ExtResource("1_jy0q2")
+
+[node name="ProgressBar" type="ProgressBar" parent="."]
+unique_name_in_owner = true
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -27.0
+grow_horizontal = 2
+grow_vertical = 0
