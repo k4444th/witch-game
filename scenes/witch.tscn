@@ -1,14 +1,14 @@
-[gd_scene load_steps=5 format=3 uid="uid://bpw3jyowbxry2"]
+[gd_scene load_steps=6 format=3 uid="uid://bpw3jyowbxry2"]
 
-[ext_resource type="Texture2D" uid="uid://dtfgd2sm0vii1" path="res://assets/witch/back_right.png" id="1_b1vsk"]
 [ext_resource type="Script" uid="uid://mwxqclvp7lsj" path="res://scripts/witch.gd" id="1_p6b3e"]
-[ext_resource type="Texture2D" uid="uid://c3n2vn8unkh42" path="res://assets/witch/front_right.png" id="2_p6b3e"]
+[ext_resource type="Texture2D" uid="uid://c1847d7rirwg1" path="res://assets/witch/back.png" id="2_p6b3e"]
+[ext_resource type="Texture2D" uid="uid://w0q2cmfwmydu" path="res://assets/witch/front.png" id="3_xk447"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_xk447"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("1_b1vsk")
+"texture": ExtResource("2_p6b3e")
 }],
 "loop": true,
 "name": &"back",
@@ -16,12 +16,16 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("2_p6b3e")
+"texture": ExtResource("3_xk447")
 }],
 "loop": true,
 "name": &"front",
 "speed": 5.0
 }]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_p6b3e"]
+radius = 483.0
+height = 1594.0
 
 [node name="Witch" type="CharacterBody2D"]
 script = ExtResource("1_p6b3e")
@@ -29,4 +33,8 @@ script = ExtResource("1_p6b3e")
 [node name="Sprite" type="AnimatedSprite2D" parent="."]
 unique_name_in_owner = true
 sprite_frames = SubResource("SpriteFrames_xk447")
-animation = &"front"
+animation = &"back"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+visible = false
+shape = SubResource("CapsuleShape2D_p6b3e")

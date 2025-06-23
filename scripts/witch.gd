@@ -3,7 +3,7 @@ extends CharacterBody2D
 var keyboardInputDirections := Vector2(0.0, 0.0)
 var direction := Vector2(0.0, 0.0)
 
-@export var speed := 1000
+@export var speed := 100
 
 func _process(_delta: float) -> void:
 	getKeyboardInputs()
