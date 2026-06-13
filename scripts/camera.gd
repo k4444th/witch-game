@@ -3,14 +3,25 @@ extends Camera2D
 # map drag logic
 var dragging := false
 var lastMousePos := Vector2.ZERO
+var targetPosition := Vector2.ZERO
+var moveSpeed := 12.0
 
 # map zoom logic
-var zoomStep := 0.05
+var zoomStep := 0.02
 var minZoom := 0.25
 var maxZoom := 3.0
+var targetZoom := Vector2.ONE
+var zoomSpeed := 8.0
+
+func _ready():
+	targetPosition = position
+	targetZoom = zoom
+
+func _process(delta):
+	position = position.lerp(targetPosition, moveSpeed * delta)
+	zoom = zoom.lerp(targetZoom, zoomSpeed * delta)
 
 func _input(event: InputEvent) -> void:
-	print(event)
 	if event is InputEventMouseButton:
 		if event.button_index == MOUSE_BUTTON_LEFT:
 			dragging = event.pressed
@@ -30,19 +41,21 @@ func _input(event: InputEvent) -> void:
 		var currentMousePos = get_viewport().get_mouse_position()
 		var delta = currentMousePos - lastMousePos
 
-		position -= delta / zoom.x
+		targetPosition -= delta / zoom.x
 		lastMousePos = currentMousePos
 
 func zoomAtMouse(factor: float) -> void:
 	var viewport := get_viewport()
 	var mousePos := viewport.get_mouse_position()
+	var screenCenter := get_viewport_rect().size * 0.5
 
-	var beforeZoom := (mousePos - get_viewport_rect().size * 0.5) / zoom + position
+	var worldBefore := (mousePos - screenCenter) / targetZoom + targetPosition
 
-	zoom *= factor
-	zoom.x = clamp(zoom.x, minZoom, maxZoom)
-	zoom.y = zoom.x
+	var newZoom := targetZoom * factor
+	newZoom.x = clamp(newZoom.x, minZoom, maxZoom)
+	newZoom.y = newZoom.x
 
-	var afterZoom := (mousePos - get_viewport_rect().size * 0.5) / zoom + position
+	var worldAfter := (mousePos - screenCenter) / newZoom + targetPosition
 
-	position += beforeZoom - afterZoom
+	targetZoom = newZoom
+	targetPosition += worldBefore - worldAfter
