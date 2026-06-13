@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://cq6sluml816ap"]
+
+[ext_resource type="Script" uid="uid://bkb3gqir8ibhd" path="res://scripts/witch.gd" id="1_b1vsk"]
+[ext_resource type="Texture2D" uid="uid://dh1dtebtc5prn" path="res://assets/Witch.png" id="1_hgjeu"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_hgjeu"]
+radius = 92.0
+height = 558.0
+
+[node name="Witch" type="CharacterBody2D" unique_id=1185538136]
+script = ExtResource("1_b1vsk")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=797176329]
+texture = ExtResource("1_hgjeu")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=299315248]
+position = Vector2(9, -1)
+shape = SubResource("CapsuleShape2D_hgjeu")

@@ -1,0 +1,9 @@
+[gd_scene format=3 uid="uid://bbw0dtbkvbac4"]
+
+[ext_resource type="Texture2D" uid="uid://cj8nrneysp6fh" path="res://assets/Floor.png" id="1_4xfga"]
+
+[node name="Map" type="Node2D" unique_id=82068959]
+
+[node name="Floor" type="Sprite2D" parent="." unique_id=2087531836]
+scale = Vector2(5, 5)
+texture = ExtResource("1_4xfga")

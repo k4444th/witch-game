@@ -11,8 +11,8 @@ config_version=5
 [application]
 
 config/name="Witch Game"
+run/main_scene="uid://u7h8sjdbgjv0"
 config/features=PackedStringArray("4.6", "Forward Plus")
-config/icon="res://icon.svg"
 
 [physics]
 
