@@ -3,22 +3,15 @@
 [ext_resource type="PackedScene" uid="uid://bbw0dtbkvbac4" path="res://scenes/map.tscn" id="1_0wfyh"]
 [ext_resource type="Script" uid="uid://cch4sjak6qor0" path="res://scripts/main.gd" id="1_jyhfs"]
 [ext_resource type="PackedScene" uid="uid://cq6sluml816ap" path="res://scenes/witch.tscn" id="2_sugp2"]
-[ext_resource type="PackedScene" uid="uid://dtu0ncqfjvvsq" path="res://scenes/scene_changers.tscn" id="3_sugp2"]
 [ext_resource type="Script" uid="uid://duuh2eb15yh11" path="res://scripts/camera.gd" id="5_tbgi4"]
 
 [node name="Main" type="Node2D" unique_id=976175452]
 script = ExtResource("1_jyhfs")
 
-[node name="Map" parent="." unique_id=82068959 instance=ExtResource("1_0wfyh")]
-position = Vector2(1610, -372)
+[node name="Map" parent="." unique_id=1300458375 instance=ExtResource("1_0wfyh")]
 
-[node name="Witch" parent="." unique_id=1185538136 instance=ExtResource("2_sugp2")]
-position = Vector2(0, 2287)
-
-[node name="SceneChangers" parent="." unique_id=1874971979 instance=ExtResource("3_sugp2")]
-position = Vector2(-1153, 999)
+[node name="Witch" parent="." unique_id=2058765097 instance=ExtResource("2_sugp2")]
 
 [node name="Camera" type="Camera2D" parent="." unique_id=511973103]
-position = Vector2(0, 2287)
 zoom = Vector2(0.25, 0.25)
 script = ExtResource("5_tbgi4")

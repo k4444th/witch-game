@@ -1,18 +1,53 @@
 [gd_scene format=3 uid="uid://cq6sluml816ap"]
 
 [ext_resource type="Script" uid="uid://bkb3gqir8ibhd" path="res://scripts/witch.gd" id="1_b1vsk"]
-[ext_resource type="Texture2D" uid="uid://dh1dtebtc5prn" path="res://assets/Witch.png" id="1_hgjeu"]
+[ext_resource type="Texture2D" uid="uid://cshtr8yav6s51" path="res://assets/witch.png" id="1_hgjeu"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_b1vsk"]
+atlas = ExtResource("1_hgjeu")
+region = Rect2(0, 0, 330, 489)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_p6b3e"]
+atlas = ExtResource("1_hgjeu")
+region = Rect2(330, 0, 330, 489)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xk447"]
+atlas = ExtResource("1_hgjeu")
+region = Rect2(660, 0, 330, 489)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_53435"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_b1vsk")
+}],
+"loop": false,
+"name": &"idle_front",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_p6b3e")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xk447")
+}],
+"loop": true,
+"name": &"walk_front",
+"speed": 5.0
+}]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_hgjeu"]
-radius = 92.0
-height = 558.0
+radius = 70.0
+height = 488.0
 
-[node name="Witch" type="CharacterBody2D" unique_id=1185538136]
+[node name="Witch" type="CharacterBody2D" unique_id=2058765097]
 script = ExtResource("1_b1vsk")
 
-[node name="Sprite2D" type="Sprite2D" parent="." unique_id=797176329]
-texture = ExtResource("1_hgjeu")
+[node name="Sprite" type="AnimatedSprite2D" parent="." unique_id=1906131027]
+sprite_frames = SubResource("SpriteFrames_53435")
+animation = &"walk_front"
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=299315248]
-position = Vector2(9, -1)
+[node name="CollisionShape" type="CollisionShape2D" parent="." unique_id=59094166]
+visible = false
 shape = SubResource("CapsuleShape2D_hgjeu")
