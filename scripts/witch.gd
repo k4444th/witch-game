@@ -30,8 +30,8 @@ func setAnimation():
 		else:
 			sprite.flip_h = false
 	
-	#elif direction.y < 0:
-		#animationString += "back"
+	elif direction.y < 0:
+		animationString += "back"
 	
 	else:
 		animationString += "front"
@@ -41,6 +41,7 @@ func setAnimation():
 func moveSprite():
 	if direction == Vector2.ZERO:
 		speed = initialSpeed
+	
 	else:
 		velocity = direction * speed
 		move_and_slide()
