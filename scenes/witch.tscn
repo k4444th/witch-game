@@ -5,15 +5,31 @@
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_b1vsk"]
 atlas = ExtResource("1_hgjeu")
-region = Rect2(0, 0, 330, 489)
+region = Rect2(0, 0, 333, 494)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_p6b3e"]
 atlas = ExtResource("1_hgjeu")
-region = Rect2(330, 0, 330, 489)
+region = Rect2(0, 494, 333, 494)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_xk447"]
 atlas = ExtResource("1_hgjeu")
-region = Rect2(660, 0, 330, 489)
+region = Rect2(333, 0, 333, 494)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_53435"]
+atlas = ExtResource("1_hgjeu")
+region = Rect2(666, 0, 333, 494)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qrkn2"]
+atlas = ExtResource("1_hgjeu")
+region = Rect2(333, 494, 333, 494)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1g4oy"]
+atlas = ExtResource("1_hgjeu")
+region = Rect2(0, 494, 333, 494)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vid1f"]
+atlas = ExtResource("1_hgjeu")
+region = Rect2(666, 494, 333, 494)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_53435"]
 animations = [{
@@ -28,17 +44,42 @@ animations = [{
 "frames": [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_p6b3e")
+}],
+"loop": true,
+"name": &"idle_side",
+"speed": 5.0
 }, {
+"frames": [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_xk447")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_53435")
 }],
 "loop": true,
 "name": &"walk_front",
 "speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qrkn2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1g4oy")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vid1f")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1g4oy")
+}],
+"loop": true,
+"name": &"walk_side",
+"speed": 5.0
 }]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_hgjeu"]
-radius = 70.0
+radius = 83.0
 height = 488.0
 
 [node name="Witch" type="CharacterBody2D" unique_id=2058765097]
@@ -46,8 +87,7 @@ script = ExtResource("1_b1vsk")
 
 [node name="Sprite" type="AnimatedSprite2D" parent="." unique_id=1906131027]
 sprite_frames = SubResource("SpriteFrames_53435")
-animation = &"walk_front"
+animation = &"idle_front"
 
 [node name="CollisionShape" type="CollisionShape2D" parent="." unique_id=59094166]
-visible = false
 shape = SubResource("CapsuleShape2D_hgjeu")
