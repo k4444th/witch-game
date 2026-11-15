@@ -1,0 +1,75 @@
+[gd_scene format=3 uid="uid://b63ylp63wj6g3"]
+
+[ext_resource type="PackedScene" uid="uid://70sbpisodfjk" path="res://scenes/seed.tscn" id="1_682jx"]
+[ext_resource type="Texture2D" uid="uid://bp26fgabag31b" path="res://assets/seeds/fireling.png" id="2_q3gey"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_y2do6"]
+atlas = ExtResource("2_q3gey")
+region = Rect2(2500, 0, 500, 500)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_x65bb"]
+atlas = ExtResource("2_q3gey")
+region = Rect2(0, 0, 500, 500)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_o51g4"]
+atlas = ExtResource("2_q3gey")
+region = Rect2(500, 0, 500, 500)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_j7on7"]
+atlas = ExtResource("2_q3gey")
+region = Rect2(1000, 0, 500, 500)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ntv14"]
+atlas = ExtResource("2_q3gey")
+region = Rect2(1500, 0, 500, 500)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bhhs7"]
+atlas = ExtResource("2_q3gey")
+region = Rect2(2000, 0, 500, 500)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_de6ro"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_y2do6")
+}],
+"loop": true,
+"name": &"bag",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_x65bb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_o51g4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_j7on7")
+}],
+"loop": true,
+"name": &"grow",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ntv14")
+}],
+"loop": true,
+"name": &"item",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bhhs7")
+}],
+"loop": true,
+"name": &"seed",
+"speed": 5.0
+}]
+
+[node name="Fireling" unique_id=2120324411 instance=ExtResource("1_682jx")]
+
+[node name="Sprite" parent="." index="0" unique_id=401860078]
+sprite_frames = SubResource("SpriteFrames_de6ro")
+animation = &"grow"

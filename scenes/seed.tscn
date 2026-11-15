@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://70sbpisodfjk"]
+
+[node name="Seed" type="Node2D" unique_id=2120324411]
+
+[node name="Sprite" type="AnimatedSprite2D" parent="." unique_id=401860078]
+animation = &""

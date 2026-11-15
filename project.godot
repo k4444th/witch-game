@@ -10,9 +10,14 @@ config_version=5
 
 [application]
 
-config/name="Witch Game"
+config/name="Witch Arcana"
 run/main_scene="uid://u7h8sjdbgjv0"
+config/custom_user_dir_name="Witch_Arcana"
 config/features=PackedStringArray("4.6", "Forward Plus")
+
+[autoload]
+
+Globals="*uid://bcjssesayw3uy"
 
 [input]
 
