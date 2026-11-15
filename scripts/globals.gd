@@ -13,7 +13,7 @@ func _ready() -> void:
 
 func saveData():
 	var newPreferences = {
-		"showGridCursor": preferences
+		"preferences": preferences
 	}
 	
 	var file = FileAccess.open(preferencesSavePath, FileAccess.WRITE)
