@@ -13,7 +13,8 @@ var drag = false
 func _input(event: InputEvent) -> void:
 	if event is InputEventMouseMotion:
 		if not drag:
-			moveCursor()
+			if Globals.preferences["showGridCursor"]:
+				moveCursor()
 	
 	if event is InputEventMouseButton:
 		if event.pressed:
