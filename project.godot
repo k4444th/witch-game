@@ -19,6 +19,15 @@ config/features=PackedStringArray("4.6", "Forward Plus")
 
 Globals="*uid://bcjssesayw3uy"
 
+[display]
+
+window/stretch/mode="canvas_items"
+window/stretch/aspect="expand"
+
+[gui]
+
+common/show_focus_state_on_pointer_event=2
+
 [input]
 
 Up={

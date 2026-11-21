@@ -1,0 +1,75 @@
+[gd_scene format=3 uid="uid://dclgeg31oxhui"]
+
+[ext_resource type="Script" uid="uid://l0rkf54tfjkb" path="res://scripts/hotbar.gd" id="1_4qkdb"]
+[ext_resource type="PackedScene" uid="uid://c5qk25ma6nil0" path="res://scenes/hotbar_key.tscn" id="1_yj1xu"]
+
+[node name="Hotbar" type="Node2D" unique_id=2039074978]
+script = ExtResource("1_4qkdb")
+
+[node name="HotbarKey1" parent="." unique_id=1780717429 instance=ExtResource("1_yj1xu")]
+offset_left = -875.0
+offset_top = -175.0
+offset_right = -700.0
+offset_bottom = 0.0
+
+[node name="HotbarKey2" parent="." unique_id=1202374703 instance=ExtResource("1_yj1xu")]
+offset_left = -700.0
+offset_top = -175.0
+offset_right = -525.0
+offset_bottom = 0.0
+id = 1
+
+[node name="HotbarKey3" parent="." unique_id=2122375039 instance=ExtResource("1_yj1xu")]
+offset_left = -525.0
+offset_top = -175.0
+offset_right = -350.0
+offset_bottom = 0.0
+id = 2
+
+[node name="HotbarKey4" parent="." unique_id=1484671463 instance=ExtResource("1_yj1xu")]
+offset_left = -350.0
+offset_top = -175.0
+offset_right = -175.0
+offset_bottom = 0.0
+id = 3
+
+[node name="HotbarKey5" parent="." unique_id=607879293 instance=ExtResource("1_yj1xu")]
+offset_left = -175.0
+offset_top = -175.0
+offset_right = 0.0
+offset_bottom = 0.0
+id = 4
+
+[node name="HotbarKey6" parent="." unique_id=880346638 instance=ExtResource("1_yj1xu")]
+offset_top = -175.0
+offset_right = 175.0
+offset_bottom = 0.0
+id = 5
+
+[node name="HotbarKey7" parent="." unique_id=1076807872 instance=ExtResource("1_yj1xu")]
+offset_left = 175.0
+offset_top = -175.0
+offset_right = 350.0
+offset_bottom = 0.0
+id = 6
+
+[node name="HotbarKey8" parent="." unique_id=1768381874 instance=ExtResource("1_yj1xu")]
+offset_left = 350.0
+offset_top = -175.0
+offset_right = 525.0
+offset_bottom = 0.0
+id = 7
+
+[node name="HotbarKey9" parent="." unique_id=1352139220 instance=ExtResource("1_yj1xu")]
+offset_left = 525.0
+offset_top = -175.0
+offset_right = 700.0
+offset_bottom = 0.0
+id = 8
+
+[node name="HotbarKey10" parent="." unique_id=939135745 instance=ExtResource("1_yj1xu")]
+offset_left = 700.0
+offset_top = -175.0
+offset_right = 875.0
+offset_bottom = 0.0
+id = 9

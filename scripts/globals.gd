@@ -3,13 +3,14 @@ extends Node
 var preferencesSavePath = "user://preferences.json"
 
 var preferences := {
-	"showGridCursor": 0
+	"showGridCursor": 0,
+	"hudScale": 0.3
 }
 
 func _ready() -> void:
 	loadData()
-	resetData()
-	saveData()
+	#resetData()
+	#saveData()
 
 func saveData():
 	var newPreferences = {
@@ -29,10 +30,12 @@ func loadData():
 		var loadedPreferences = JSON.parse_string(content)
 		
 		if typeof(loadedPreferences) == TYPE_DICTIONARY:
-			preferences = loadedPreferences.get("showGridCursor", {
-					"showGridCursor": 0
+			preferences = loadedPreferences.get("preferences", {
+					"showGridCursor": 0,
+					"hudScale": 0.3
 				}
 			)
 
 func resetData():
 	preferences["showGridCursor"] = true
+	preferences["hudScale"] = 0.3

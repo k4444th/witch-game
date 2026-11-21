@@ -1,0 +1,15 @@
+[gd_scene format=3 uid="uid://c5qk25ma6nil0"]
+
+[ext_resource type="Texture2D" uid="uid://b16il4v5ewxl3" path="res://assets/inventory/grid.png" id="1_y1pur"]
+[ext_resource type="Texture2D" uid="uid://dc4ptbn0umidg" path="res://assets/inventory/grid_selected.png" id="2_jdf0w"]
+[ext_resource type="Script" uid="uid://dihr70bqvxynx" path="res://scripts/hotbar_key.gd" id="3_jdf0w"]
+
+[node name="HotbarKey" type="TextureButton" unique_id=1780717429]
+offset_right = 40.0
+offset_bottom = 40.0
+texture_normal = ExtResource("1_y1pur")
+texture_focused = ExtResource("2_jdf0w")
+script = ExtResource("3_jdf0w")
+
+[connection signal="button_down" from="." to="." method="_on_button_down"]
+[connection signal="pressed" from="." to="." method="_on_pressed"]

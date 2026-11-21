@@ -2,15 +2,23 @@ extends Node2D
 
 # Click logic
 var click := false
-var drag = false
+var drag := false
+
+# Hotbar logic
+var selectedHotbarKey := 0
 
 # Nodes (onready)
 @onready var mapNode := $Map
 @onready var witchNode := $Witch
 @onready var cameraNode := $Camera
 @onready var clickTimerNode := $ClickTimer
+@onready var hotbarNode = $HUD/HBox/Hotbar
 
-func _input(event: InputEvent) -> void:
+func _ready() -> void:
+	hotbarNode.setSelectedKey(selectedHotbarKey)
+	hotbarNode.connect("hotbarKeyPressed", handleHotbarKeyPressed)
+
+func _unhandled_input(event: InputEvent) -> void:
 	if event is InputEventMouseMotion:
 		if not drag:
 			if Globals.preferences["showGridCursor"]:
@@ -77,6 +85,10 @@ func getTilesFromTileCoords(tileCoords: Vector2i):
 		currentTile.append(tile[floori((5.0 - i) / 2) - 1][(5 - i) % 2])
 	
 	print(currentTile)
+
+func handleHotbarKeyPressed(id: int):
+	selectedHotbarKey = id
+	print("Selected Hotbar Slot with ID ", selectedHotbarKey)
 
 func _on_click_timer_timeout() -> void:
 	click = false

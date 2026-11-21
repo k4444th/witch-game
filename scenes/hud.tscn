@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://dplwx2k7f0sxr"]
+
+[ext_resource type="PackedScene" uid="uid://dclgeg31oxhui" path="res://scenes/hotbar.tscn" id="1_ahhtf"]
+[ext_resource type="Script" uid="uid://b3m5unacxeh0t" path="res://scripts/hud.gd" id="1_oo0fn"]
+
+[node name="HUD" type="CanvasLayer" unique_id=2140135449]
+script = ExtResource("1_oo0fn")
+
+[node name="HBox" type="HBoxContainer" parent="." unique_id=658259804]
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_top = -25.0
+
+[node name="Hotbar" parent="HBox" unique_id=1829267705 instance=ExtResource("1_ahhtf")]
+scale = Vector2(0.3, 0.3)

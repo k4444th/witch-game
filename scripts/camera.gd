@@ -8,8 +8,8 @@ var moveSpeed := 12.0
 
 # map zoom logic
 var zoomStep := 0.02
-var minZoom := 0.25
-var maxZoom := 3.0
+var minZoom := 0.05
+var maxZoom := 1.0
 var targetZoom := Vector2.ONE
 var zoomSpeed := 8.0
 
